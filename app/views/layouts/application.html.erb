@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Newshipped</title>
+    <%= csrf_meta_tags %>
+
+    <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <header>
+    <nav>
+      <% if user_signed_in? %>
+      <%= link_to "Edit Profile", edit_user_registration_path, :class => 'navlink' %>
+      <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navlink' %>
+    <% else %>
+      <%= link_to "Sign Up", new_user_registration_path, :class => 'navlink' %>
+      <%= link_to "Sign In", new_user_session_path, :class => 'navlink' %>
+    <% end %>
+    </nav>
+  </header>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <body>
+    <%= yield %>
+  </body>
+
+  <footer>
+  </footer>
+</html>
