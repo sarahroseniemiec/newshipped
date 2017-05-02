@@ -1,0 +1,6 @@
+<% if @boat.errors.full_messages.any? %>
+  <% @boat.errors.full_messages.each do |error_message| %>
+  <%= error_message %>
+  <br />
+  <% end %>
+<% end %>
