@@ -13,6 +13,21 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :fname, "First Name" %><br />
+    <%= f.text_field :fname, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lname, "Last Name" %><br />
+    <%= f.text_field :lname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :coname, "Company Name" %><br />
+    <%= f.text_field :coname %>
+  </div>
+
+  <div class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
     <% if @minimum_password_length %>
