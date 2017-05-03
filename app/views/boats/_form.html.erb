@@ -1,0 +1,17 @@
+<div class="center">
+  <%= form_for @boat do |f| %>
+  <div class="">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="">
+    <%= f.label :amtcontainers, "Amount of Containers Boat can Ship" %><br />
+    <%= f.number_field :amtcontainers %>
+  </div>
+  <div class="">
+    <%= f.label :location %><br />
+    <%= f.select :location, ["New York", "Shanghai", "Barcelona", "Amsterdam", "Le Havre", "Sydney", "Buenos Aires", "Veracruz"] %>
+  </div>
+  <%= f.submit %>
+  <% end %>
+</div>

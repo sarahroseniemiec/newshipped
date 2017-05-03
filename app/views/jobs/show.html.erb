@@ -1,0 +1,18 @@
+<h2><%= @job.name %></h2>
+<div class="center">
+  Description: <%= @job.description %><br />
+  Origin: <%= @job.origin %><br />
+  Destination: <%= @job.destination %><br />
+  Cost: $<%= @job.cost %><br />
+  Amount of Containers: <%= @job.amtcontainers %><br />
+</div>
+
+<h3> Boats </h3>
+<div class="center">
+  <% @boats.each do |boat| %>
+  Name: <%= boat.name %><br />
+  Amount of Containers: <%= boat.amtcontainers %><br />
+  Location: <%= boat.location %><br />
+  
+  <% end %>
+</div>

@@ -5,6 +5,10 @@ class Job < ApplicationRecord
   validates :origin, inclusion: { in: ["New York", "Shanghai", "Barcelona", "Amsterdam", "Le Havre", "Sydney", "Buenos Aires", "Veracruz"] }
   validates :destination, inclusion: { in: ["New York", "Shanghai", "Barcelona", "Amsterdam", "Le Havre", "Sydney", "Buenos Aires", "Veracruz"] }
   validates :cost, numericality: { greater_than: 1000 }
-  validates :amtcontainers, numericality: true
+  validates :amtcontainers, numericality: {
+  greater_than: 0 }
+
+  has_many :boat_jobs
+  has_many :boats, through: :boat_jobs
 
 end

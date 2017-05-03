@@ -1,0 +1,15 @@
+<h2>Job Board</h2>
+<div class="center">
+  <% @jobs.each do |job| %>
+  <div class="">
+    <%= job.name %>
+  </div>
+    Description: <%= job.description %><br />
+    Origin: <%= job.origin %><br />
+    Destination: <%= job.destination %><br />
+    Cost: $<%= job.cost %><br />
+    Amount of Containers: <%= job.amtcontainers %><br />
+    <%= link_to "Add Boat", job_path(job) %>
+    <hr>
+  <% end %>
+</div>

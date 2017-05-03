@@ -1,13 +1,4 @@
 <h2>Create a New Boat</h2>
 
 <%= render "errors" %>
-
-<%= form_for @boat do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :amtcontainers, "Amount of Containers Boat can Ship" %>
-  <%= f.number_field :amtcontainers %>
-  <%= f.label :location %>
-  <%= f.select :location, ["New York", "Shanghai", "Barcelona", "Amsterdam", "Le Havre", "Sydney", "Buenos Aires", "Veracruz"] %>
-  <%= f.submit %>
-<% end %>
+<%= render "form" %>

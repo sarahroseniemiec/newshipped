@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   resources :boats
   resources :jobs
 
+  # get "/users/:id" => "users#show"
+
 
 end

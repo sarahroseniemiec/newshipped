@@ -6,22 +6,33 @@
 
     <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
 
+    <%= favicon_link_tag 'anchor.png' %>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <header>
     <nav>
-      <%= link_to "Home", root_path, :class => 'navlink' %>
-      <% if user_signed_in? %>
-      <%= link_to "Edit Profile", edit_user_registration_path, :class => 'navlink' %>
-      <%= link_to "New Boat", new_boat_path, :class => 'navlink' %>
-      <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navlink' %>
-    <% else %>
-      <%= link_to "Sign Up", new_user_registration_path, :class => 'navlink' %>
-      <%= link_to "Sign In", new_user_session_path, :class => 'navlink' %>
-    <% end %>
+      <div class="navs">
+        <%= link_to "Home", root_path, :class => 'navlink' %>
+        <% if user_signed_in? %>
+        <%= link_to "Edit Profile", edit_user_registration_path, :class => 'navlink' %>
+        <%= link_to "Job Board", jobs_path, :class => 'navlink' %>
+        <%= link_to "New Boat", new_boat_path, :class => 'navlink' %>
+        <%= link_to "New Job", new_job_path, :class => 'navlink' %>
+        <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navlink' %>
+        <% else %>
+        <%= link_to "Sign Up", new_user_registration_path, :class => 'navlink' %>
+        <%= link_to "Sign In", new_user_session_path, :class => 'navlink' %>
+        <% end %>
+      </div>
     </nav>
   </header>
+
+  <div class="center">
+    <%= image_tag "anchor.png", class:"anchor" %>
+  </div>
+
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>

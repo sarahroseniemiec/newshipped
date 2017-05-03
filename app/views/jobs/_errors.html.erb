@@ -1,6 +1,8 @@
-<% if @job.errors.full_messages.any? %>
-  <% @job.errors.full_messages.each do |error_message| %>
-  <%= error_message %>
-  <br />
+<div class="center">
+  <% if @job.errors.full_messages.any? %>
+    <% @job.errors.full_messages.each do |error_message| %>
+    <%= error_message %>
+    <br />
+    <% end %>
   <% end %>
-<% end %>
+</div>

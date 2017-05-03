@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+$blue: #85f2e9;
+$lightblue: #a6f4ee;
+
 html, body {
   margin: 0;
   height: 100%;
@@ -9,4 +13,90 @@ html, body {
 
 body {
   font-family: 'Karla', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+h2 {
+  text-align: center;
+}
+
+button:focus, textarea:focus {
+   outline: none;
+}
+
+label {
+  font-size: 18px;
+}
+
+input:-webkit-autofill {
+   -webkit-box-shadow: inset 0 0 0px 9999px white;
+}
+
+input:focus, textarea:focus, select:focus {
+ outline: none;
+ border: 1px solid black;
+}
+
+input {
+  font-size: 18px;
+  padding: 5px;
+  margin: 10px;
+}
+
+input[type="submit"] {
+  border: none;
+  text-transform: uppercase;
+  font-size: 15px;
+  margin: 20px;
+  padding: 10px;
+  width: 200px;
+  background-color: $blue;
+
+
+}
+
+input[type="submit"]:hover {
+  background-color: $lightblue;
+
+}
+
+textarea {
+  font-size: 18px;
+  margin: 10px;
+}
+
+select {
+  font-size: 15px;
+  border-radius: 0px;
+  font-family: 'Karla', sans-serif;
+  margin: 10px;
+}
+
+.navs{
+  text-align: center;
+  margin-top: 10px;
+}
+
+.navlink {
+  color: black;
+  text-transform: uppercase;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.navlink:hover {
+  color: $blue;
+}
+
+.center {
+  text-align: center;
+}
+
+.anchor {
+  width: 75px;
+  margin-top: 10px;
 }

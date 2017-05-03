@@ -1,0 +1,29 @@
+<div class="center">
+  <%= form_for @job do |f| %>
+  <div class="">
+    <%= f.label :name, "Name of Job" %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="">
+    <%= f.label :description, "Description of Job" %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="">
+    <%= f.label :origin %><br />
+    <%= f.select :origin, ["New York", "Shanghai", "Barcelona", "Amsterdam", "Le Havre", "Sydney", "Buenos Aires", "Veracruz"] %>
+  </div>
+  <div class="">
+    <%= f.label :destination %><br />
+    <%= f.select :destination, ["New York", "Shanghai", "Barcelona", "Amsterdam", "Le Havre", "Sydney", "Buenos Aires", "Veracruz"] %>
+  </div>
+  <div class="">
+    <%= f.label :cost %><br />
+    <%= f.number_field :cost, step: :any %>
+  </div>
+  <div class="">
+    <%= f.label :amtcontainers, "Amount of Containers needed" %><br />
+    <%= f.number_field :amtcontainers %>
+  </div>
+    <%= f.submit %>
+  <% end %>
+</div>
