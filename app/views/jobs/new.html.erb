@@ -1,0 +1,19 @@
+<h2>Create a New Job</h2>
+
+<%= render "errors" %>
+
+<%= form_for @job do |f| %>
+  <%= f.label :name, "Name of Job" %>
+  <%= f.text_field :name %>
+  <%= f.label :description, "Description of Job" %>
+  <%= f.text_area :description %>
+  <%= f.label :origin %>
+  <%= f.select :origin, ["New York", "Shanghai", "Barcelona", "Amsterdam", "Le Havre", "Sydney", "Buenos Aires", "Veracruz"] %>
+  <%= f.label :destination %>
+  <%= f.select :destination, ["New York", "Shanghai", "Barcelona", "Amsterdam", "Le Havre", "Sydney", "Buenos Aires", "Veracruz"] %>
+  <%= f.label :cost %>
+  <%= f.number_field :cost, step: :any %>
+  <%= f.label :amtcontainers, "Amount of Containers needed" %>
+  <%= f.number_field :amtcontainers %>
+  <%= f.submit %>
+<% end %>

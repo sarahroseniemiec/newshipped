@@ -8,6 +8,6 @@
   <%= f.label :amtcontainers, "Amount of Containers Boat can Ship" %>
   <%= f.number_field :amtcontainers %>
   <%= f.label :location %>
-  <%= f.text_field :location %>
+  <%= f.select :location, ["New York", "Shanghai", "Barcelona", "Amsterdam", "Le Havre", "Sydney", "Buenos Aires", "Veracruz"] %>
   <%= f.submit %>
 <% end %>
