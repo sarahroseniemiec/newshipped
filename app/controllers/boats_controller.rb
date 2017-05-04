@@ -1,6 +1,6 @@
 class BoatsController < ApplicationController
 
-  before_action :authenticate_user!, :except => [:index]
+  before_action :authenticate_user!
 
   def index
     @boats = Boat.all
@@ -13,7 +13,8 @@ class BoatsController < ApplicationController
   def create
     @boat = Boat.new(boat_params)
     if @boat.save
-      redirect_to root_path
+      flash[:notice] = "Boat was created."
+      redirect_to boats_path
     else
       render :new
     end
@@ -26,7 +27,8 @@ class BoatsController < ApplicationController
   def update
     @boat = Boat.find(params[:id])
     if @boat.update(boat_params)
-      redirect_to root_path
+      flash[:notice] = "Boat was updated."
+      redirect_to boats_path
     else
       render :edit
     end
@@ -35,7 +37,8 @@ class BoatsController < ApplicationController
   def destroy
     @boat = Boat.find(params[:id])
     if @boat.destroy
-      redirect_to root_path
+      flash[:notice] = "Boat was deleted."
+      redirect_to boats_path
     else
       render :edit
     end

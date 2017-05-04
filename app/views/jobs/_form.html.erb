@@ -2,7 +2,7 @@
   <%= form_for @job do |f| %>
   <div class="">
     <%= f.label :name, "Name of Job" %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name, autofocus: true %>
   </div>
   <div class="">
     <%= f.label :description, "Description of Job" %><br />

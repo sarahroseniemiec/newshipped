@@ -2,7 +2,7 @@
   <%= form_for @boat do |f| %>
   <div class="">
     <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name, autofocus: true %>
   </div>
   <div class="">
     <%= f.label :amtcontainers, "Amount of Containers Boat can Ship" %><br />

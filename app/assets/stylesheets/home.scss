@@ -20,7 +20,15 @@ a {
   color: black;
 }
 
+h1 {
+  text-align: center;
+}
+
 h2 {
+  text-align: center;
+}
+
+h3 {
   text-align: center;
 }
 
@@ -55,13 +63,10 @@ input[type="submit"] {
   padding: 10px;
   width: 200px;
   background-color: $blue;
-
-
 }
 
 input[type="submit"]:hover {
   background-color: $lightblue;
-
 }
 
 textarea {
@@ -99,4 +104,28 @@ select {
 .anchor {
   width: 75px;
   margin-top: 10px;
+}
+
+.linkbutt {
+  text-align: center;
+  font-size: 18px;
+  margin: 15px;
+  padding: 10px;
+  background-color: $blue;
+  width: 120px;
+  color: black;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.linkbutt:hover {
+  background-color: $lightblue;
+}
+
+.notice {
+  font-size: 20px;
+}
+
+.boatpic {
+  width: 700px;
 }

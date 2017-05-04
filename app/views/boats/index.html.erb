@@ -1,9 +1,12 @@
 <h2>All Boats</h2>
 <div class="center">
-  <% @boats.each do |boat| %>
+  <div class="boats">
+    <% @boats.each do |boat| %>
     Name: <%= boat.name %><br />
     Containers: <%= boat.amtcontainers %><br />
     Location: <%= boat.location %><br />
+    <%= link_to "Edit Boat", edit_boat_path(boat.id), class: "linkbutt" %>
     <hr>
-  <% end %>
+    <% end %>
+  </div>
 </div>

@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-
+  # Only logged in users can do things relating to jobs ie. make jobs, edit jobs, delete jobs, see jobs.
   before_action :authenticate_user!
 
   def index
@@ -18,7 +18,8 @@ class JobsController < ApplicationController
   def create
     @job = Job.new(job_params)
     if @job.save
-      redirect_to root_path
+      flash[:notice] = "Job was created."
+      redirect_to jobs_path
     else
       render :new
     end
@@ -31,7 +32,8 @@ class JobsController < ApplicationController
   def update
     @job = Job.find(params[:id])
     if @job.update(job_params)
-      redirect_to root_path
+      flash[:notice] = "Job was updated."
+      redirect_to jobs_path
     else
       render :edit
     end
@@ -40,7 +42,8 @@ class JobsController < ApplicationController
   def destroy
     @job = Job.find(params[:id])
     if @job.destroy
-      redirect_to root_path
+      flash[:notice] = "Job was deleted."
+      redirect_to jobs_path
     else
       render :edit
     end

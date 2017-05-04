@@ -4,12 +4,15 @@ Rails.application.routes.draw do
   get "/" => "home#index"
   root to: "home#index"
 
+  # telling it to use the controller that I set up that has the new params for the column additions
   devise_for :users, :controllers => { registrations: 'registrations' }
 
   resources :boats
   resources :jobs
 
-  # get "/users/:id" => "users#show"
+
+  # created a route for associating the boats and jobs needed to have job id and boat id available to me
+  post "/jobs/:job_id/boats/:id" => "boat_jobs#create"
 
 
 end
