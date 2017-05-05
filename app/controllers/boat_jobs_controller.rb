@@ -3,7 +3,8 @@ class BoatJobsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    @boat = Boat.find(params[:id])
+    @job = Job.find(params[:job_id].to_i)
+    @boat = Boat.find(params[:id].to_i)
     if BoatJob.exists?(job_id: params[:job_id].to_i, boat_id: params[:id].to_i)
       flash[:notice] = "That boat was already assigned to that job."
       redirect_to job_path(params[:job_id])

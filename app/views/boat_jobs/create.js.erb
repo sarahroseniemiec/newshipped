@@ -2,3 +2,7 @@ var boatName = document.getElementById('boatname'),
   boatNameChild = document.createElement('div');
 boatNameChild.innerHTML = "<%= j (render 'boat').chomp.html_safe %>";
 boatName.appendChild(boatNameChild);
+var newLink = document.querySelector("#newlink<%=@boat.id%>")
+var addBoat = document.querySelector("#addboat<%=@boat.id%>")
+addBoat.style.display = "none"
+newLink.innerHTML = "<%= j link_to 'Remove Boat', '/jobs/#{@job.id}/boats/#{boat.id}', method: :delete, class: 'linkbutt' %>"

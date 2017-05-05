@@ -23,12 +23,19 @@
       Amount of Containers: <%= boat.amtcontainers %><br />
       Location: <%= boat.location %><br />
       <% if BoatJob.exists?(job_id: @job.id, boat_id: boat.id) %>
-        <%= link_to "Remove Boat", "/jobs/#{@job.id}/boats/#{boat.id}", method: :delete, class: "linkbutt", id: "deleteboat" %>
+        <%= link_to "Remove Boat", "/jobs/#{@job.id}/boats/#{boat.id}", method: :delete, class: "linkbutt", id:"deleteboat#{boat.id}" %>
         <br>
       <% else %>
-        <%= link_to "Add Boat", "/jobs/#{@job.id}/boats/#{boat.id}", method: :post, remote: true, class: "linkbutt", id: "addboat" %>
+      <div id="newlink<%=boat.id%>">
+
+      </div>
+        <%= link_to "Add Boat", "/jobs/#{@job.id}/boats/#{boat.id}", method: :post, remote: true, class: "linkbutt", id:"addboat#{boat.id}" %>
         <br>
       <% end %>
     <% end %>
+
+    <div id="one">
+      wwwww
+    </div>
   </div>
 </div>
