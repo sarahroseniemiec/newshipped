@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   # created a route for associating the boats and jobs needed to have job id and boat id available to me
   post "/jobs/:job_id/boats/:id" => "boat_jobs#create"
 
+  delete "/jobs/:job_id/boats/:id" => "boat_jobs#destroy"
 
 end

@@ -1,4 +1,7 @@
 class BoatJobsController < ApplicationController
+
+  before_action :authenticate_user!
+
   def create
     @boat = Boat.find(params[:id])
     if BoatJob.exists?(job_id: params[:job_id].to_i, boat_id: params[:id].to_i)
@@ -19,6 +22,13 @@ class BoatJobsController < ApplicationController
         redirect_to :back
       end
     end
+  end
+
+  def destroy
+    @boatjob = BoatJob.where(job_id: params[:job_id].to_i,
+    boat_id: params[:id].to_i).first
+    @boatjob.destroy
+    redirect_to :back
   end
 
 end

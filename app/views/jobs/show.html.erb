@@ -12,7 +12,7 @@
     <div id="boatname">
       <% @job.boats.each do |b| %>
       <div class="">
-        <%= b.name %>        
+        <%= b.name %>
       </div>
       <% end %>
     </div>
@@ -22,6 +22,8 @@
       Name: <%= boat.name %><br />
       Amount of Containers: <%= boat.amtcontainers %><br />
       Location: <%= boat.location %><br />
+    
+      <%= link_to "Remove Boat", "/jobs/#{@job.id}/boats/#{boat.id}", method: :delete, class: "linkbutt" %>
       <%= link_to "Add Boat", "/jobs/#{@job.id}/boats/#{boat.id}", method: :post, remote: true, class: "linkbutt" %>
       <br>
     <% end %>
