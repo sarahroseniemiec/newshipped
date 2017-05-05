@@ -34,6 +34,7 @@ class BoatsController < ApplicationController
     end
   end
 
+
   def destroy
     @boat = Boat.find(params[:id])
     if @boat.destroy
@@ -48,7 +49,7 @@ class BoatsController < ApplicationController
   private
   # strong params
   def boat_params
-    params.require(:boat).permit(:name, :amtcontainers, :location)
+    params.require(:boat).permit(:name, :amtcontainers, :location, :avatar)
   end
 
 end

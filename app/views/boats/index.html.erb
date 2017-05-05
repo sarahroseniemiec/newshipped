@@ -2,6 +2,7 @@
 <div class="center">
   <div class="boats">
     <% @boats.each do |boat| %>
+    <%= image_tag boat.avatar.url(:thumb) %><br />
     Name: <%= boat.name %><br />
     Containers: <%= boat.amtcontainers %><br />
     Location: <%= boat.location %><br />

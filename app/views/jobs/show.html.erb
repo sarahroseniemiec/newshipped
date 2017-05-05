@@ -6,16 +6,23 @@
     Destination: <%= @job.destination %><br />
     Cost: $<%= @job.cost %><br />
     Amount of Containers: <%= @job.amtcontainers %><br />
-    Boats Assigned to Job: <br>
-    <% @job.boats.each do |b| %>
-      <%= b.name %><br />
-    <% end %>
+    <div class="boatassignment">
+      Boats Assigned to Job:
+    </div>
+    <div id="boatname">
+      <% @job.boats.each do |b| %>
+      <div class="">
+        <%= b.name %>        
+      </div>
+      <% end %>
+    </div>
     <h3> Boats </h3>
     <% @boats.each do |boat| %>
+      <%= image_tag boat.avatar.url(:thumb) %><br />
       Name: <%= boat.name %><br />
       Amount of Containers: <%= boat.amtcontainers %><br />
       Location: <%= boat.location %><br />
-      <%= link_to "Add Boat", "/jobs/#{@job.id}/boats/#{boat.id}", method: :post, class: "linkbutt" %>
+      <%= link_to "Add Boat", "/jobs/#{@job.id}/boats/#{boat.id}", method: :post, remote: true, class: "linkbutt" %>
       <br>
     <% end %>
   </div>
