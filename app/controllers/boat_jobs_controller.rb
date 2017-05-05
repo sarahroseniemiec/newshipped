@@ -1,5 +1,5 @@
 class BoatJobsController < ApplicationController
-
+  # Only logged in users can assign boats to jobs or remove boats from jobs 
   before_action :authenticate_user!
 
   def create
@@ -14,7 +14,6 @@ class BoatJobsController < ApplicationController
       boat_id: params[:id].to_i
       )
       if @boat_job.save
-        flash[:notice] = "Boat added to job"
         respond_to do |format|
           format.js
         end

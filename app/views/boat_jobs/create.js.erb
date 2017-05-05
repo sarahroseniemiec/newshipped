@@ -1,8 +1,9 @@
+//adds the boat name to the assigned boats list without reloading the page
 var boatName = document.getElementById('boatname'),
   boatNameChild = document.createElement('div');
 boatNameChild.innerHTML = "<%= j (render 'boat').chomp.html_safe %>";
 boatName.appendChild(boatNameChild);
-// hides the add boat button and generates the removes the
+// hides the add boat button and generates the remove boat button without reloading the page
 var newLink = document.querySelector("#newlink<%=@boat.id%>")
 var addBoat = document.querySelector("#addboat<%=@boat.id%>")
 addBoat.style.display = "none"

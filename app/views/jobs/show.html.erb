@@ -6,6 +6,7 @@
     Destination: <%= @job.destination %><br />
     Cost: $<%= @job.cost %><br />
     Amount of Containers: <%= @job.amtcontainers %><br />
+    <hr>
     <div class="boatassignment">
       Boats Assigned to Job:
     </div>
@@ -22,6 +23,7 @@
       Name: <%= boat.name %><br />
       Amount of Containers: <%= boat.amtcontainers %><br />
       Location: <%= boat.location %><br />
+      <!-- checks to see if association exists between job and boat is it does show the remove boat button, if it doesn't show the add boat button -->
       <% if BoatJob.exists?(job_id: @job.id, boat_id: boat.id) %>
         <%= link_to "Remove Boat", "/jobs/#{@job.id}/boats/#{boat.id}", method: :delete, class: "linkbutt", id:"deleteboat#{boat.id}" %>
         <br>
@@ -33,9 +35,5 @@
         <br>
       <% end %>
     <% end %>
-
-    <div id="one">
-      wwwww
-    </div>
   </div>
 </div>

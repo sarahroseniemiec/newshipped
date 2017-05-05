@@ -1,5 +1,5 @@
 class BoatsController < ApplicationController
-
+  # Only logged in users can do things relating to boats ie. make boats, edit boats, delete boats, see boats.
   before_action :authenticate_user!
 
   def index
