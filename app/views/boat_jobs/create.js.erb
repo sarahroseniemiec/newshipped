@@ -1,1 +1,7 @@
-document.querySelector("#boatname").append("<%= escape_javascript (render 'boat') %>")
+
+var boatName = document.getElementById('boatname'),
+  boatNameChild = document.createElement('div');
+boatNameChild.innerHTML = "<%= j (render 'boat').chomp.html_safe %>";
+
+// Prepend it
+boatName.insertBefore(boatNameChild, boatName.firstChild);
